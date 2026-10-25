@@ -13,18 +13,18 @@ rigorously checked via experiments.py whether the final guess is valid.
 import numpy as np
 from query import query_distance, get_candidates
 
-def solve_shape(shape, p_s):
+def solve_shape(shape):
     """
-    Executes the 3-guess strategy to find p_s inside the shape.
+    Executes the 3-guess strategy to find P_s inside the shape.
     Automatically branches into Case A (polygons with flat boundary segments) 
     or Case B (strictly curved shapes like circles).
     """
     if not shape.is_strictly_curved():
-        return _strategy_case_a(shape, p_s)
+        return _strategy_case_a(shape)
     else:
-        return _strategy_case_b(shape, p_s)
+        return _strategy_case_b(shape)
 
-def _strategy_case_a(shape, p_s):
+def _strategy_case_a(shape):
     """
     Case A strategy: Boundary of the convex hull contains a segment [A, B].
     Chooses the endpoints of the segment as P1 and P2.
@@ -39,8 +39,8 @@ def _strategy_case_a(shape, p_s):
     # --- QUERY LOCATIONS FOR CASE A ---
     p1 = A
     p2 = B
-    d1 = query_distance(p1, p_s)
-    d2 = query_distance(p2, p_s)
+    d1 = query_distance(p1)
+    d2 = query_distance(p2)
     
     candidates = get_candidates(p1, d1, p2, d2)
     
@@ -56,7 +56,7 @@ def _strategy_case_a(shape, p_s):
         
     return [p1, p2, final_guess]
 
-def _strategy_case_b(shape, p_s):
+def _strategy_case_b(shape):
     """
     Case B strategy: Boundary contains no segments (strictly curved).
     Chooses an adaptive second query P2 close to P1 such that the chord cap diameter delta < d1.
@@ -68,7 +68,7 @@ def _strategy_case_b(shape, p_s):
     # --- QUERY LOCATIONS FOR CASE B ---
     # Guess P1 on the boundary
     p1 = center + np.array([radius, 0.0])
-    d1 = query_distance(p1, p_s)
+    d1 = query_distance(p1)
         
     # Choose P2 close to P1 such that chord length (delta) < d1
     target_chord = min(radius * 0.1, d1 * 0.5)
@@ -76,7 +76,7 @@ def _strategy_case_b(shape, p_s):
     d_theta = 2.0 * np.arcsin(val)
     
     p2 = center + np.array([radius * np.cos(d_theta), radius * np.sin(d_theta)])
-    d2 = query_distance(p2, p_s)
+    d2 = query_distance(p2)
     
     candidates = get_candidates(p1, d1, p2, d2)
     

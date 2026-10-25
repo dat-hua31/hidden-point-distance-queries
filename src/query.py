@@ -4,13 +4,24 @@ Core distance query engine
 
 import numpy as np
 
-def query_distance(p, p_s):
+_current_p_s = None
+
+
+def set_secret_point(p_s):
+    """Sets the hidden secret point p_s for the current query session."""
+    global _current_p_s
+    _current_p_s = np.array(p_s, dtype=float)
+
+
+def query_distance(p):
     """
-    Returns the Euclidean distance between a query point p and the hidden point p_s.
+    Returns the Euclidean distance between a query point p and the hidden point p_s,
+    without requiring p_s to be passed explicitly.
     """
+    if _current_p_s is None:
+        raise ValueError("Secret point p_s has not been set. Call set_secret_point(p_s) first.")
     p = np.array(p, dtype=float)
-    p_s = np.array(p_s, dtype=float)
-    return np.linalg.norm(p - p_s)
+    return np.linalg.norm(p - _current_p_s)
 
 
 def intersect_circles(p1, r1, p2, r2):
