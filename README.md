@@ -4,7 +4,7 @@ An algorithmic implementation and formal mathematical repository exploring the p
 
 ---
 
-# The Island Hunt
+## The Island Hunt
 
 A treasure is buried at a uniformly random point $P_s$ somewhere on an island chain $S$. The chain can be any compact shape: a ring, a scatter of disconnected islands, a coastline full of bays and inlets. You are told nothing about its geometry beyond its area being positive.
 
