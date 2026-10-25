@@ -4,9 +4,21 @@ An algorithmic implementation and formal mathematical repository exploring the p
 
 ---
 
+# The Island Hunt
+
+A treasure is buried at a uniformly random point $P_s$ somewhere on an island chain $S$. The chain can be any compact shape: a ring, a scatter of disconnected islands, a coastline full of bays and inlets. You are told nothing about its geometry beyond its area being positive.
+
+You get a detector with one rule. **You may only place it at a point of $S$**, and it tells you the exact distance to the treasure. You can’t stand in the sea, and you can’t use the textbook trick of probing from far outside the shape. After each reading you choose your next spot, and your final query must land exactly on the treasure.
+
+What is the fewest number of probes that is guaranteed to work, for every shape and every treasure location?
+
+---
+
 ## Overview
 
-Given a compact set $S \subset \mathbb{R}^2$ with positive area and a uniformly distributed hidden point $P_s \in S$, an adaptive query strategy selects points $P_1, P_2, \dots \in S$ and receives their Euclidean distances to $P_s$. The strategy succeeds at step $k$ if $P_k = P_s$.
+Given a compact set $S \subset \mathbb{R}^2$ with positive area and a uniformly distributed hidden point $P_s \in S$, an adaptive query strategy selects points $P_1, P_2, \dots \in S$ and receives their Euclidean distances to $P_s$. The strategy succeeds at step $k$ if $P_k = P_s$ (counting the final guess).
+
+No convexity or connectedness of S is assumed. Guesses cannot be outside of S.
 
 This repository contains both the formal mathematical proof and a modular Python framework demonstrating that **three queries always suffice**, while **two queries succeed with probability zero**.
 
@@ -78,16 +90,16 @@ If $\partial H$ is strictly curved (contains no segments), every boundary point 
 To test the strategies across various shapes and verify query bounds:
 
 ```bash
+python -m pip install -r requirements.txt
 python src/experiments.py
-
 ```
 
 ---
 
 ## Documentation & References
 
-* **Formal Paper:** See [`formal.pdf`](https://www.google.com/search?q=formal.pdf) for rigorous mathematical proofs.
-* **Notes:** See [`note.md`](note.md) for a quick conceptual summary.
+* **Formal Paper:** See [`docs/formal.pdf`](https://www.google.com/search?q=formal.pdf) for rigorous mathematical proofs.
+* **Notes:** See [`docs/note.md`](note.md) for a quick conceptual summary.
 
 ---
 

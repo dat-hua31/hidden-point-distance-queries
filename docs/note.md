@@ -2,7 +2,7 @@
 
 ## Problem
 
-Let $S \subset \mathbb{R}^2$ be a **closed, bounded** set with positive area. A point $P_s$ is drawn uniformly from $S$. Each guess must be a point $P \in S$ and returns $|P - P_s|$. What is the minimum number of guesses needed to find $P_s$, **counting the final guess that hits it**?
+Let $S \subset \mathbb{R}^2$ be a **closed, bounded** set with positive area (convexity or connectedness of S is not assumed). A point $P_s$ is drawn uniformly from $S$. Each guess must be a point $P \in S$ and returns $|P - P_s|$. What is the minimum number of guesses needed to find $P_s$, **counting the final guess that hits it**?
 
 ## Result
 
