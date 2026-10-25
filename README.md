@@ -4,7 +4,7 @@ An algorithmic implementation and formal mathematical repository exploring the p
 
 ---
 
-## 📜 Overview
+## Overview
 
 Given a compact set $S \subset \mathbb{R}^2$ with positive area and a uniformly distributed hidden point $P_s \in S$, an adaptive query strategy selects points $P_1, P_2, \dots \in S$ and receives their Euclidean distances to $P_s$. The strategy succeeds at step $k$ if $P_k = P_s$.
 
@@ -12,7 +12,7 @@ This repository contains both the formal mathematical proof and a modular Python
 
 ---
 
-## 📐 Theoretical Results
+## Theoretical Results
 
 **Theorem 1.** For every compact set $S \subset \mathbb{R}^2$ with positive area:
 
@@ -23,7 +23,7 @@ Hence, the exact minimum number of queries required in the worst case is **3**.
 
 ---
 
-## 🗂️ Repository Architecture
+## Repository Architecture
 
 ```text
 ├── formal.pdf          # Complete formal mathematical paper & proofs
@@ -37,7 +37,7 @@ Hence, the exact minimum number of queries required in the worst case is **3**.
 
 ---
 
-## 🔍 Core Algorithmic Strategies
+## Core Algorithmic Strategies
 
 ### 1. The Mirror Pair Reduction
 
@@ -66,7 +66,7 @@ If $\partial H$ is strictly curved (contains no segments), every boundary point 
 
 ---
 
-## 🚀 Getting Started
+## Getting Started
 
 ### Prerequisites
 
@@ -84,13 +84,13 @@ python experiments.py
 
 ---
 
-## 📖 Documentation & References
+## Documentation & References
 
-* **Formal Paper:** See [`formal.pdf`](https://www.google.com/search?q=formal.pdf) for rigorous measure-theoretic proofs, Carathéodory's theorem applications, and integral lower bound calculations.
+* **Formal Paper:** See [`formal.pdf`](https://www.google.com/search?q=formal.pdf) for rigorous mathematical proofs.
 * **Notes:** See [`note.md`](note.md) for a quick conceptual summary.
 
 ---
 
-## 📄 License
+## License
 
 This project is open-source under the [MIT License](https://www.google.com/search?q=LICENSE).
