@@ -20,7 +20,9 @@ Let $S \subset \mathbb{R}^2$ be a **closed, bounded** set with positive area. A 
 *Proof.* $\sigma$ is an isometry fixing $P_1$ and $P_2$, so $|\sigma(P_s) - P_i| = |P_s - P_i| = d_i$. Two circles with distinct centers meet in at most two points.
 
 So after two guesses the candidates on the sheet are $\{P_s, \sigma(P_s)\} \cap S$. Guess 3 is forced to hit unless
+
 $$\sigma(P_s) \in S \quad\text{and}\quad \sigma(P_s) \neq P_s .$$
+
 If $\sigma(P_s) \in S$, then $\sigma(P_s) \in S \cap \sigma(S)$. With $H = \text{conv}(S)$ this gives
 
 $$\sigma(P_s) \in S \;\Longrightarrow\; \sigma(P_s) \in H \cap \sigma(H). \tag{$*$}$$
