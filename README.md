@@ -78,7 +78,7 @@ If $\partial H$ is strictly curved (contains no segments), every boundary point 
 To test the strategies across various shapes and verify query bounds:
 
 ```bash
-python experiments.py
+python src/experiments.py
 
 ```
 
