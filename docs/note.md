@@ -25,7 +25,7 @@ $$\sigma(P_s) \in S \quad\text{and}\quad \sigma(P_s) \neq P_s .$$
 
 If $\sigma(P_s) \in S$, then $\sigma(P_s) \in S \cap \sigma(S)$. With $H = \text{conv}(S)$ this gives
 
-$$\sigma(P_s) \in S \;\Longrightarrow\; \sigma(P_s) \in H \cap \sigma(H). \tag{$*$}$$
+$$\sigma(P_s) \in S \;\Longrightarrow\; \sigma(P_s) \in H \cap \sigma(H). \quad (*)$$
 
 **Goal:** choose $P_1, P_2 \in S$ so that $H \cap \sigma(H)$ cannot contain a point $\sigma(P_s) \neq P_s$.
 
