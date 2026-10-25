@@ -21,7 +21,7 @@ Let $S \subset \mathbb{R}^2$ be a **closed, bounded** set with positive area. A 
 
 So after two guesses the candidates on the sheet are $\{P_s, \sigma(P_s)\} \cap S$. Guess 3 is forced to hit unless
 $$\sigma(P_s) \in S \quad\text{and}\quad \sigma(P_s) \neq P_s .$$
-If $\sigma(P_s) \in S$, then $\sigma(P_s) \in S \cap \sigma(S)$. With $H = \operatorname{conv}(S)$ this gives
+If $\sigma(P_s) \in S$, then $\sigma(P_s) \in S \cap \sigma(S)$. With $H = \text{conv}(S)$ this gives
 
 $$\sigma(P_s) \in S \;\Longrightarrow\; \sigma(P_s) \in H \cap \sigma(H). \tag{$*$}$$
 
@@ -81,7 +81,7 @@ $$K = H \cap \ell^- \qquad\text{(the cap).}$$
 - If $x \in \ell^-$, then $x \in H \cap \ell^- = K$.
 - Otherwise $x$ is in the open half-plane opposite $\ell^-$, and $x \in \sigma(H)$ there, so $x \in \sigma(H \cap \ell^-) = \sigma(K)$.
 
-**Claim 2: $\operatorname{diam}(K) \to 0$ as $P_2 \to P_1$ along $\partial H$.** $K$ is the convex region bounded by the chord $P_1P_2$ and the boundary arc from $P_1$ to $P_2$. Its diameter equals the diameter of that arc, which shrinks to $0$ as $P_2 \to P_1$. So for fixed $d_1 > 0$ we can pick $P_2$ with $\delta := \operatorname{diam}(K) < d_1$.
+**Claim 2: $\text{diam}(K) \to 0$ as $P_2 \to P_1$ along $\partial H$.** $K$ is the convex region bounded by the chord $P_1P_2$ and the boundary arc from $P_1$ to $P_2$. Its diameter equals the diameter of that arc, which shrinks to $0$ as $P_2 \to P_1$. So for fixed $d_1 > 0$ we can pick $P_2$ with $\delta := \text{diam}(K) < d_1$.
 
 **Conclusion.** $P_1 \in K$ and $\sigma(P_1) = P_1$, so $K \cup \sigma(K) \subset \bar{B}(P_1, \delta)$. If $\sigma(P_s) \in S$, then by $(*)$ and Claim 1,
 
