@@ -8,7 +8,7 @@ from shape import PolygonShape, CircleShape
 from query import set_secret_point
 from strategies import solve_shape
 
-HIT_TOLERANCE = 1e-5
+HIT_TOLERANCE = 1e-7
 TRIALS = 10000
 
 def run_experiment():
@@ -16,12 +16,16 @@ def run_experiment():
     print(" Running 3-Guess Strategy Validation Suite")
     print("==================================================")
     
-    # Define test shapes for Case A (Polygon) and Case B (Circle)
-    square = PolygonShape(Polygon([[0, 0], [3, 0], [3, 3], [0, 3]]))
+    # Define raw coordinate lists for an irregular, jagged multi-component shape (Case A)
+    poly1_coords = [(0, 0), (0.8, 1.5), (1.2, 0.4), (2.5, 2.2), (3.0, 0.2), (1.5, -0.8)]
+    poly2_coords = [(4.5, 0.5), (5.2, 2.8), (6.8, 1.0), (7.5, 3.2), (8.2, 0.0), (6.0, -1.2)]
+    
+    # PolygonShape handles building and unifying them internally
+    polygons= PolygonShape([poly1_coords, poly2_coords])
     circle = CircleShape(center=(0, 0), radius=2.0)
     
     tests = [
-        ("Polygon Shape (Case A)", square), 
+        ("Polygon Shape (Case A)", polygons), 
         ("Circle Shape (Case B)", circle)
     ]
     
@@ -43,11 +47,9 @@ def run_experiment():
                 successes += 1
         
         print(f"[{name}]")
-        print(f"  - Success Rate : {successes}/{TRIALS} (100%)")
+        print(f"  - Success Rate : {successes}/{TRIALS}")
         print(f"  - Max Guesses  : {max_guesses} (Theorem limit: <= 3)")
         print("-" * 50)
-
-    print("All simulations passed successfully. Theorem 1 holds.")
 
 if __name__ == "__main__":
     run_experiment()
